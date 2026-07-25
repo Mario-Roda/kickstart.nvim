@@ -989,3 +989,4 @@ end
 
 
   vim.pack.add { gh 'ThePrimeagen/vim-be-good' }
+vim.opt.clipboard:append('unnamedplus')
