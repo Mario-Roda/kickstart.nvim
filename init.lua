@@ -697,7 +697,6 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     clangd = {},
-    gopls = {},
     pyright = {},
     -- rust_analyzer = {},
     --
@@ -988,5 +987,12 @@ end
 -- vim: ts=2 sts=2 sw=2 et
 
 
-  vim.pack.add { gh 'ThePrimeagen/vim-be-good' }
+vim.pack.add { gh 'ThePrimeagen/vim-be-good' }
 vim.opt.clipboard:append('unnamedplus')
+
+vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Move focus to the left window' })
+vim.keymap.set('i', 'kj', '<ESC>', { desc = 'Move focus to the left window' })
+
+
+require('VS').setup()
+require('options')
