@@ -855,7 +855,7 @@ do
       --
       -- See `:help blink-cmp-config-keymap` for defining your own keymap
       preset = 'default',
-      ['<Tab>'] = { 'accept', 'fallback' },
+      ['<CR>'] = { 'accept', 'fallback' },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -938,6 +938,9 @@ do
 
       local language = vim.treesitter.language.get_lang(filetype)
       if not language then return end
+
+      -- Skip Treesitter for LaTeX so VimTeX's native syntax and math-zone detection work properly
+      if language == 'latex' or language == 'tex' then return end
 
       local installed_parsers = require('nvim-treesitter').get_installed 'parsers'
 

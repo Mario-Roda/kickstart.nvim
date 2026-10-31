@@ -1,3 +1,6 @@
+-- Enabling the syntax engine.
+vim.cmd('syntax enable')
+vim.cmd('filetype plugin indent on')
 -- Configuración del método de compilación (latexmk es el predeterminado y el más recomendado)
 vim.g.vimtex_compiler_engine = 'lualatex'
 vim.g.vimtex_compiler_method = 'latexmk'
